@@ -16,23 +16,39 @@ export default class MyPlugin extends Plugin {
 
 	async onload() {
 		await this.loadSettings();
+		const RTLRegEx = /[\u0591-\u07FF\u200F\u202B\u202E\uFB1D-\uFDFD\uFE70-\uFEFC]/;
+		this.registerMarkdownPostProcessor((container: HTMLElement, context: MarkdownPostProcessorContext) => {
+						// Fixes the Reading view (for tables & callouts this fixes the editor too)
+						container.querySelectorAll('p,div.cm-line,h1,h2,h3,h4,h5,h6' + ',div.callout-title-inner').forEach(element => {
+							element.setAttribute('dir', 'auto');
+							element.classList.add('sajjad');
+							// element.setAttribute('color', 'red');
+							// element.setAttribute('background-color', 'red !important');
+
+
+						});
+						// container.querySelectorAll('p,div.cm-line,h1,h2,h3,h4,h5,h6').forEach(element => {
+						// 	element.setAttribute('display','none');
+						// });
+		});
+
 
 		// This creates an icon in the left ribbon.
-		const ribbonIconEl = this.addRibbonIcon('dice', 'My Plugin', (evt: MouseEvent) => {
+		const ribbonIconEl = this.addRibbonIcon('dice', 'sajjad bro', (evt: MouseEvent) => {
 			// Called when the user clicks the icon.
-			new Notice('This is a notice!');
+			new Notice('progress sajjad');
 		});
 		// Perform additional things with the ribbon
 		ribbonIconEl.addClass('my-plugin-ribbon-class');
 
 		// This adds a status bar item to the bottom of the app. Does not work on mobile apps.
 		const statusBarItemEl = this.addStatusBarItem();
-		statusBarItemEl.setText('Status Bar Text');
+		statusBarItemEl.setText('this is sajjad status');
 
 		// This adds a simple command that can be triggered anywhere
 		this.addCommand({
 			id: 'open-sample-modal-simple',
-			name: 'Open sample modal (simple)',
+			name: 'are you fucking sajjad me',
 			callback: () => {
 				new SampleModal(this.app).open();
 			}
