@@ -1,9 +1,25 @@
 .sajjad{
-    background-color: red !important;
-    padding: 100px;
+    background-color: green !important;
+    /* padding: 100px; */
     color: yellow !important;
 }
-
-body{
-    background-color: red;
+.hasan{
+    background-color: cornflowerblue;
 }
+
+.ali{
+    background-color: blue;
+}
+
+.mohammad{
+    background-color: bisque !important;
+    /* size: 20rem; */
+}
+
+.mojtaba{
+    background-color: pink !important;
+}
+
+/* div{
+    background-color: red;
+} */

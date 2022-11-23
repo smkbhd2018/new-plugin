@@ -24,9 +24,30 @@ export default class MyPlugin extends Plugin {
 							element.classList.add('sajjad');
 							// element.setAttribute('color', 'red');
 							// element.setAttribute('background-color', 'red !important');
-
+							
 
 						});
+						container.querySelectorAll('div').forEach(element => {
+							// element.setAttribute('dir', 'auto');
+							element.classList.toggle('hasan');
+							// element.setAttribute('color', 'red');
+							// element.setAttribute('background-color', 'red !important');
+							});
+							container.querySelectorAll('div').forEach((element: HTMLElement) => {
+								element.parentElement.classList.add('mojtaba');
+								// i deleted a question mark that i didint know what was it and it still working
+							});
+							container.querySelectorAll('.HyperMD-list-line').forEach((element: HTMLElement) => {
+								element.classList.add('mojtaba');
+							});
+
+							/* container.querySelectorAll(".markdown-preview-pusher").closest('.markdown-preview-sizer').forEach((element: HTMLElement) => {
+								element.parentElement.classList.add('mohammad');
+								// i deleted a question mark that i didint know what was it and it still working
+							}); */
+
+
+
 						// container.querySelectorAll('p,div.cm-line,h1,h2,h3,h4,h5,h6').forEach(element => {
 						// 	element.setAttribute('display','none');
 						// });
@@ -43,7 +64,7 @@ export default class MyPlugin extends Plugin {
 
 		// This adds a status bar item to the bottom of the app. Does not work on mobile apps.
 		const statusBarItemEl = this.addStatusBarItem();
-		statusBarItemEl.setText('this is sajjad status');
+		statusBarItemEl.setText('this is hasan status');
 
 		// This adds a simple command that can be triggered anywhere
 		this.addCommand({
